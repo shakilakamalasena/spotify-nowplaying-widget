@@ -1,15 +1,13 @@
 import { Buffer } from "buffer";
 import querystring from "querystring";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 //Setting up the Spotify API and Endpoints
-const NOW_PLAYING_ENDPOINT =
-    "https://api.spotify.com/v1/me/player/currently-playing";
-const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
-const client_id = "85ad101c8f864f19aa4f71aec2f061a0";
-const client_secret = "7846be54d0194ed59022ea79c10a9e4d";
-const refresh_token =
-    "AQBLAlwyBXzwIt61yWOAt5Q3yvvD7NiZeRsQK4cXYbCrG-zDAekH-Rqv5yaTkBXrrzi2XhghQvT3MDAMYm9Zf71lvKN1fzPXXyxTOg7UVOuCNNodPA9czbCj-l1TP2VBnuU";
+const NOW_PLAYING_ENDPOINT = process.env.REACT_APP_NOW_PLAYING_ENDPOINT;
+const TOKEN_ENDPOINT = process.env.REACT_APP_TOKEN_ENDPOINT;
+const client_id = process.env.REACT_APP_CLIENT_ID;
+const client_secret = process.env.REACT_APP_CLEINT_SECRET_KEY;
+const refresh_token = process.env.REACT_APP_REFRESH_TOKEN;
 
 //Function to generate an access token using the refresh token everytime the website is opened or refreshed
 export const getAccessToken = async (
@@ -109,9 +107,7 @@ const SpotifyWidget = () => {
         }, 1000);
     }, []);
 
-    return (
-        <div className="">SpotifyWidget</div>
-    );
+    return <div className="">SpotifyWidget</div>;
 };
 
 export default SpotifyWidget;
