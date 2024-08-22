@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
-    "querystring": "^0.2.1"
+    "querystring": "^0.2.1",
+    "tailwindcss": "^3.4.10"
   }
 }
